@@ -1,0 +1,187 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: azure;
+
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    font-size: medium;
+
+    text-align: center;
+}
+
+header {
+    height: 50px;
+    width: calc(100vw - 148px);
+    margin: 16px 64px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 10px solid skyblue;
+}
+
+header * {
+    font-size: 30px;
+}
+
+main {
+    height: calc(100vh - 118px);
+    width: calc(100vw - 128px);
+    margin: 16px 64px;
+}
+
+#que-area-outer {
+    height: calc(100vh - 102px - 154px - 16px);
+
+    background-color: rgba(137, 207, 235, 0.5);
+    text-align: left;
+}
+
+#que-area-outer h2 {
+    margin: 0;
+    padding: 10px;
+
+    text-align: center;
+    font-size: 40px;
+}
+
+#que-area {
+    padding: 32px;
+}
+
+#que-area p {
+    margin: 0;
+    padding: 0;
+}
+
+#q {
+    font-size: 38px;
+}
+
+#que {
+    overflow: scroll;
+    font-size: 28px;
+}
+
+#TorF {
+    color: red;
+    font-weight: bold;
+}
+
+#button-area {
+    margin: 16px 0 0 0;
+
+    flex: 0 0 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+}
+
+#button-area button {
+    height: 64px;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+
+    flex-grow: 1;
+    flex: 1 0 auto;
+
+    font-size: 24px;
+    overflow: hidden;
+    border: none;
+    border-radius: 8px;
+
+    color: #000;
+    background-color:lightgreen;
+    border-bottom: 5px solid mediumseagreen;
+}
+
+#start {
+    height: 15vh;
+    width: 60vw;
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    left: 20vw;
+    top: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(127, 255, 212, 0.5);
+    border-radius: 12px;
+    font-size: 5vh;
+
+    border: none;
+
+    color: #000;
+    background-color:cornflowerblue;
+    border-bottom: 10px solid darkslateblue;
+}
+
+#result {
+    height: 20vh;
+    width: 90vw;
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    left: calc(5vw - 0px);
+    top: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(127, 255, 212, 0.8);
+    /* border-radius: 12px; */
+    display: none;
+    /* border: 3px solid aqua; */
+}
+
+#result-text {
+    font-size: 3vh;
+    border-bottom: 6px double;
+    color:midnightblue
+}
+
+#all-point {
+    font-size: 4vh;
+    color:dodgerblue;
+}
+
+#timer {
+    height: 50vh;
+    width: 50vh;
+    margin: 0;
+    padding: 0;
+    z-index: -99;
+
+    position: fixed;
+    top: calc(50vh - 50vh / 2);
+    left: calc(50vw - 50vh / 2);
+
+    border-radius: 50%;
+
+    background-color: rgba(0,0,0,0);
+}
