@@ -4,12 +4,13 @@ let Timer = new Simple_Timer(document.querySelector('#timer'), finish, 20, true,
 const startEle = document.querySelector('#start');
 const result = document.querySelector('#result');
 const allPoint = document.querySelector('#all-point')
-const timeMilOneQue = 25000;
-const timeMilOneAns = 8000;
+const timeMilOneQue = 35000;
+const timeMilOneAns = 10000;
 let total = 0;
 let thinking = false;
-let A = document.querySelector("#q")
-let kai = document.querySelector("#kaisetsu")
+let A = document.querySelector("#q");
+let kai = document.querySelector("#kaisetsu");
+const queInner = document.querySelector("#que-area-inner");
 
 //QUIZ処理
 const QUIZ = {
@@ -84,6 +85,7 @@ const QUIZ = {
             QUIZ.com.hidden();
             kai.style.display = "none";
             A.style.display = "none";
+            queInner.style.display = "block";
             Q.choNum = -1;
             thinking = true;
             Timer.start(timeMil, QUIZ.main.checkAns);
@@ -94,6 +96,7 @@ const QUIZ = {
             QUIZ.com.drow();
             kai.style.display = "block"
             A.style.display = "inline";
+            queInner.style.display = "none";
             //=========================
             buttons = document.querySelectorAll("#button-area *");
             buttons.forEach(ele =>{ele.textContent = ""});
