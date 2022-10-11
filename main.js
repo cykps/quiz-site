@@ -7,6 +7,9 @@ const allPoint = document.querySelector('#all-point')
 const timeMilOneQue = 25000;
 const timeMilOneAns = 8000;
 let total = 0;
+let thinking = false;
+let A = document.querySelector("#q")
+let kai = document.querySelector("#kaisetsu")
 
 //QUIZ処理
 const QUIZ = {
@@ -79,30 +82,38 @@ const QUIZ = {
             QUIZ.torf.hidden();
             QUIZ.ans.hidden();
             QUIZ.com.hidden();
+            kai.style.display = "none";
+            A.style.display = "none";
             Q.choNum = -1;
+            thinking = true;
             Timer.start(timeMil, QUIZ.main.checkAns);
         },
         dorwAnsAndCom(timeMil) {
             QUIZ.torf.drow();
             QUIZ.ans.drow();
             QUIZ.com.drow();
+            kai.style.display = "block"
+            A.style.display = "inline";
             //=========================
             buttons = document.querySelectorAll("#button-area *");
-            buttons.textContent = "";
-            newButton.setAttribute('class', "gray-button");
+            buttons.forEach(ele =>{ele.textContent = ""});
+            buttons.forEach(ele => (ele.setAttribute('class', "gray-button")));
             Timer.start(timeMil, nextQue);
         },
         checkAns() {
+            thinking = false;
             console.log(QUIZ.quizBookRes);
             console.log(QUIZ.quizBook[QUIZ.number][2],Q.choNum);
             if (Q.choNum == QUIZ.quizBook[QUIZ.number][2]) {
                 console.log(QUIZ.quizBookRes);
                 QUIZ.quizBookRes[QUIZ.number][1] = true;
                 console.log(Q.quizBookRes);
-                QUIZ.torf.body = "〇";
+                QUIZ.torf.body = "〇正解です✨";
+                QUIZ.torf.ele.style.color = "red";
             } else {
                 QUIZ.quizBookRes[QUIZ.number][1] = false;
-                QUIZ.torf.body = "✕";
+                QUIZ.torf.body = "✖不正解です😓";
+                QUIZ.torf.ele.style.color = "midnightblue";
             }
             Q.main.dorwAnsAndCom(timeMilOneAns);
         },
@@ -135,7 +146,8 @@ const QUIZ = {
             for (let i = 0; i < this.body.length; i++) {
                 newButton = document.createElement("button");
                 newButton.innerHTML = this.body[i];
-                newButton.setAttribute('onclick', QUIZ.funcAtClick.name + "(" + i + ")")
+                newButton.setAttribute('onclick', QUIZ.funcAtClick.name + "(" + i + ")");
+                newButton.setAttribute('class', "active-button");
                 console.log(newButton);
                 buttonArea.appendChild(newButton);
             }
@@ -146,7 +158,7 @@ const QUIZ = {
     },
     torf: {
         ele: null,
-        body: "〇",
+        body: "",
         setEleById(id) {
             this.ele = document.querySelector("#" + id);
         },
@@ -200,10 +212,11 @@ function start() {
 
 function clickCho(choNo) {
     console.log(Q.quizBookRes);
-    Q.choNum = choNo;
-    Timer.stop();
-    //Q.main.dorwAnsAndCom(timeMilOneAns);
-    console.log("click cho");
+    if (thinking) {
+        Q.choNum = choNo;
+        Timer.stop();
+        console.log("click cho");
+    }
 }
 
 function finish() {
