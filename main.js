@@ -4,8 +4,8 @@ let Timer = new Simple_Timer(document.querySelector('#timer'), finish, 20, true,
 const startEle = document.querySelector('#start');
 const result = document.querySelector('#result');
 const allPoint = document.querySelector('#all-point')
-const timeMilOneQue = 15000;
-const timeMilOneAns = 10000;
+const timeMilOneQue = 25000;
+const timeMilOneAns = 8000;
 let total = 0;
 
 //QUIZ処理
@@ -86,6 +86,10 @@ const QUIZ = {
             QUIZ.torf.drow();
             QUIZ.ans.drow();
             QUIZ.com.drow();
+            //=========================
+            buttons = document.querySelectorAll("#button-area *");
+            buttons.textContent = "";
+            newButton.setAttribute('class', "gray-button");
             Timer.start(timeMil, nextQue);
         },
         checkAns() {
