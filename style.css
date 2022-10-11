@@ -60,13 +60,17 @@ main {
     padding: 32px;
 }
 
-#que-area p {
+#que-area-innner {
     margin: 0;
     padding: 0;
 }
 
-#q {
+.q-and-a {
     font-size: 38px;
+}
+
+#q {
+    display: none;
 }
 
 #que {
@@ -74,9 +78,29 @@ main {
     font-size: 28px;
 }
 
+#kaisetsu {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+    font-size: 28px;
+    font-weight: bold;
+
+    display: none;
+}
+
 #TorF {
+    font-size: 28px;
     color: red;
     font-weight: bold;
+    border-bottom: 5px solid;
+}
+
+#ans {
+    font-size: 28px;
+}
+
+#com {
+    font-size: 28px;
 }
 
 #button-area {
@@ -104,30 +128,43 @@ main {
 
     font-size: 24px;
     overflow: hidden;
-    border: none;
     border-radius: 8px;
+}
 
-    color: #000;
+.active-button {
+    color: black;
     background-color:lightgreen;
+    border: none;
     border-bottom: 5px solid mediumseagreen;
 }
 
+.gray-button {
+    background-color: gray;
+    border: none;
+    border-bottom: 5px solid dimgray;
+}
+
 #start {
-    height: 15vh;
+    height: 30vh;
     width: 60vw;
     margin: 0;
     padding: 0;
-
+    
     position: fixed;
     left: 20vw;
-    top: 40vh;
+    top: 30vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
 
-    background-color: rgba(127, 255, 212, 0.5);
+#start p span {
+    font-size: 3vh;
+    border-bottom: 4px solid darkturquoise;
+    color:midnightblue;
+}
+
+#start-button {
+    padding: 16px 16px 8px 16px;
+
     border-radius: 12px;
     font-size: 5vh;
 
@@ -139,35 +176,68 @@ main {
 }
 
 #result {
-    height: 20vh;
-    width: 90vw;
+    height: 70vh;
+    width: 70vw;
     margin: 0;
     padding: 0;
 
     position: fixed;
-    left: calc(5vw - 0px);
-    top: 40vh;
+    left: 15vw;
+    top: 15vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(127, 255, 212, 0.8);
+    overflow: hidden;
+    background-color: rgba(127, 255, 212, 0.95);
     /* border-radius: 12px; */
     display: none;
     /* border: 3px solid aqua; */
 }
 
-#result-text {
+#kekka {
+    color:mediumslateblue;
     font-size: 3vh;
-    border-bottom: 6px double;
-    color:midnightblue
+}
+
+#point-outer {
+    font-size: 4vh;
+    color:slateblue;
 }
 
 #all-point {
     font-size: 4vh;
-    color:dodgerblue;
+    color:slateblue;
+    border-bottom: 10px double slateblue;
+}
+
+table {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-collapse: collapse;
+    border: none;
+}
+
+caption {
+    border-bottom: 3px double royalblue;
+    margin-bottom: 3px;
+    color: teal;
+}
+
+tbody {
+    border: 4px double dodgerblue;
+}
+
+th, td {
+    border: 3px double deepskyblue;
+    height: 24px;
+    padding: 2px 10px 2px 10px;
 }
 
 #timer {

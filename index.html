@@ -18,11 +18,13 @@
         <div id="que-area-outer">
             <div id="que-area">
                 <p id="que-area-inner">
-                    <span id="q">Q.</span>
+                    <span class="q-and-a">Q.</span>
                     <span id="que"></span>
                 </p>
-                <p>
-                    <span id="TorF"></span>
+                <p><span id="TorF"></span></p>
+                <p id="kaisetsu">▶ 解説✨</p>
+                <p id="ans-area">
+                    <span class="q-and-a" id="q">A.</span>
                     <span id="ans"></span>
                 </p>
                 <p>
@@ -31,18 +33,36 @@
             </div>
         </div>
         <div id="button-area">
-            <button type="button"></button>
-            <button type="button"></button>
-            <button type="button"></button>
-            <button type="button"></button>
+            <button type="button" class="active-button"></button>
+            <button type="button" class="active-button"></button>
+            <button type="button" class="active-button"></button>
+            <button type="button" class="active-button"></button>
         </div>
     </main>
 
     <div id="timer"></div>
 
-    <button id="start" onclick="start()">クイズスタート</button>
-    <div id="result" onclick="start()"><p><span id="result-text">結果</span></p><br><span id="all-point"></sapn></div>
+    <div id="result">
+        <p id="kekka"><span>⸻⸻⸻⸻ 結果 ⸻⸻⸻⸻</span></p>
+        <p id="point-outer"><span>あなたの得点は...</span><span id="all-point"></span><span>🎉</span></p>
+        <table>
+            <caption>ポイント - オイゾウ換算表</caption>
+            <tr><th></th><th>男性</th><th>女性</th></tr>
+            <tr><td>0ポイント</td><td>10ｵｲｿﾞｳ</td><td>5ｵｲｿﾞｳ</td></tr>
+            <tr><td>1ポイント</td><td>12ｵｲｿﾞｳ</td><td>7ｵｲｿﾞｳ</td></tr>
+            <tr><td>2ポイント</td><td>14ｵｲｿﾞｳ</td><td>9ｵｲｿﾞｳ</td></tr>
+            <tr><td>3ポイント</td><td>16ｵｲｿﾞｳ</td><td>11ｵｲｿﾞｳ</td></tr>
+            <tr><td>4ポイント</td><td>18ｵｲｿﾞｳ</td><td>13ｵｲｿﾞｳ</td></tr>
+            <tr><td>5ポイント</td><td>20ｵｲｿﾞｳ</td><td>15ｵｲｿﾞｳ</td></tr>
+            <tr><td>6ポイント</td><td>22ｵｲｿﾞｳ</td><td>17ｵｲｿﾞｳ</td></tr>
+            <tr><td>7ポイント</td><td>24ｵｲｿﾞｳ</td><td>19ｵｲｿﾞｳ</td></tr>
+        </table>
+    </div>
 
+    <div id="start">
+        <p><span>四択クイズです。時間内に下のボタンをタッチして答えて下さい</span></p>
+        <button id="start-button" onclick="start()">クイズスタート</button>
+    </div>
 
     <script src="main.js"></script>
 </body>
