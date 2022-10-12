@@ -176,14 +176,14 @@ main {
 }
 
 #result {
-    height: 70vh;
+    height: 40vh;
     width: 70vw;
     margin: 0;
     padding: 0;
 
     position: fixed;
     left: 15vw;
-    top: 15vh;
+    top: 30vh;
 
     display: flex;
     flex-direction: column;
@@ -211,6 +211,14 @@ main {
     font-size: 4vh;
     color:slateblue;
     border-bottom: 10px double slateblue;
+}
+
+img {
+    height: 40%;
+    margin: 0;
+    padding: 0;
+
+    border-top: 1px solid darkblue;
 }
 
 table {

@@ -6,7 +6,7 @@ function Simple_Timer(elementForPie, functionFinished, intervalDrowing, PieReset
         pieResetDrow = PieResetDrow || false,
         colorB = colorBigger,
         colorS = colorSmaller || 'rgba(0,0,0,0)',
-        timeMil= 0,
+        timeMil= -1,
         timeStr= 0,
         thisObj = this;
 
@@ -44,6 +44,7 @@ function Simple_Timer(elementForPie, functionFinished, intervalDrowing, PieReset
             ele4Pie.style.background =
             "conic-gradient(" + colorB + spa + "100%," + spa + colorS  + spa + "100%)";
         }
+        timeMil = -1;
         setTimeout(funcFinished, 0);
         return false;
     }
@@ -54,5 +55,12 @@ function Simple_Timer(elementForPie, functionFinished, intervalDrowing, PieReset
 
     this.setPieResetDrow = function (bool) {
         pieResetDrow = bool;
+    }
+
+    this.isDrowing = function () {
+        if (timeMil === -1) {
+            return false;
+        }
+        return true;
     }
 }
